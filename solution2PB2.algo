@@ -1,4 +1,4 @@
-ALGORITHM Sum Hash Tab: distincts elements
+ALGORITHM Sum Hash Tab: overlapping elements
 VAR
    htab1:HASH_TABLE<integer,integer>
    Htab2:HASH_TABLE<integer,integer>
@@ -16,7 +16,7 @@ END_FOR
 FOR i FROM 1 TO N STEP 1 DO
   aux1:=htab1.get[i,a];
 FOR j FROM 1 TO M STEP 1  DO
-IF (htab1.get[i,a]<>htab2.get[j,b]) THEN
+IF (htab1.get[i,a]=htab2.get[j,b]) THEN
      Sum=Sum+htab1.get[i,a]
 ELSE
     Sum=Sum
@@ -24,9 +24,9 @@ END_IF
 END_FOR    
 END_FOR
 FOR j FROM 1 TO M STEP 1  DO
-  aux2:=B2.get[j,b];
+  aux2:=htab2.get[j,b];
 FOR i FROM 1 TO N STEP 1 DO
-IF (htab2.get[j,b]<>htab1.get[i,a]) THEN
+IF (htab2.get[j,b]=htab1.get[i,a]) THEN
     Sum=Sum+htab2.get[j,b]
 ELSE
     Sum=Sum
