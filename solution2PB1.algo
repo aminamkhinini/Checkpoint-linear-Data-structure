@@ -1,0 +1,6 @@
+ALGORITHM Sum Hash Tab
+VAR
+    htab1:Hash-table
+BEGIN
+    set_instructions
+END
